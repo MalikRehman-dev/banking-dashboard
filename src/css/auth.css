@@ -1,0 +1,33 @@
+/* ===== Login / Register ===== */
+.auth-page { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; }
+
+.auth-side {
+  background: linear-gradient(150deg, var(--teal-dark), var(--teal));
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 50px;
+}
+.auth-side h1 { font-size: 2.4rem; margin-bottom: 12px; }
+.auth-side p { font-size: 1.1rem; opacity: 0.9; max-width: 380px; }
+
+.auth-box { display: flex; flex-direction: column; justify-content: center; padding: 40px 12%; background: var(--card); }
+.auth-box h2 { font-size: 1.8rem; margin-bottom: 6px; }
+.auth-link { margin-top: 18px; text-align: center; font-size: 0.95rem; }
+.hint { margin-top: 12px; text-align: center; font-size: 0.85rem; color: var(--muted); background: var(--teal-light); padding: 8px; border-radius: 8px; }
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .auth-side { padding: 30px; }
+  .auth-side h1 { font-size: 1.9rem; }
+  .auth-box { padding: 40px 8%; }
+}
+
+/* Mobile: upar banner, neeche form */
+@media (max-width: 768px) {
+  .auth-page { grid-template-columns: 1fr; }
+  .auth-side { padding: 28px 20px; }
+  .auth-side h1 { font-size: 1.6rem; }
+  .auth-box { padding: 28px 20px 40px; }
+}

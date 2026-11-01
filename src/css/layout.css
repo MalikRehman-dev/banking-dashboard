@@ -1,0 +1,53 @@
+/* ===== Sidebar + main area ===== */
+.app { min-height: 100vh; }
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 250px;
+  background: linear-gradient(180deg, var(--teal-dark), #06292b);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  padding: 22px 16px;
+  z-index: 50;
+  transition: transform 0.25s;
+}
+.logo { display: flex; align-items: center; gap: 10px; font-size: 1.3rem; font-weight: 700; margin-bottom: 30px; }
+.logo-mark { width: 38px; height: 38px; border-radius: 10px; background: var(--gold); color: #3b2c00; display: flex; align-items: center; justify-content: center; font-weight: 800; }
+
+.nav { display: flex; flex-direction: column; gap: 6px; flex: 1; }
+.nav-link { color: #cfe7e5; text-decoration: none; padding: 12px 14px; border-radius: 10px; font-weight: 500; display: flex; gap: 10px; }
+.nav-link:hover { background: rgba(255, 255, 255, 0.08); }
+.nav-link.active { background: var(--teal); color: #fff; }
+.sidebar-footer { display: flex; flex-direction: column; gap: 10px; }
+
+.main { margin-left: 250px; }
+.topbar { background: #fff; border-bottom: 1px solid var(--border); padding: 16px 28px; display: flex; align-items: center; gap: 14px; position: sticky; top: 0; z-index: 20; }
+.menu-btn { display: none; background: var(--teal-light); border: none; font-size: 1.4rem; width: 42px; height: 42px; border-radius: 10px; cursor: pointer; }
+.content { padding: 28px; max-width: 1150px; }
+.overlay { display: none; }
+
+/* ===== Tablet (1024px tak) ===== */
+@media (max-width: 1024px) {
+  .sidebar { width: 210px; }
+  .main { margin-left: 210px; }
+  .content { padding: 22px; }
+}
+
+/* ===== Mobile (768px tak) : sidebar chhup jata hai ===== */
+@media (max-width: 768px) {
+  .sidebar { transform: translateX(-100%); width: 260px; }
+  .sidebar.open { transform: translateX(0); }
+  .overlay { display: block; position: fixed; inset: 0; background: rgba(0, 0, 0, 0.5); z-index: 40; }
+  .main { margin-left: 0; }
+  .menu-btn { display: block; }
+  .topbar { padding: 12px 16px; }
+  .content { padding: 16px; }
+}
+
+@media (max-width: 480px) {
+  .toast { left: 12px; right: 12px; max-width: none; }
+}
